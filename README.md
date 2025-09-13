@@ -47,10 +47,11 @@ This project investigates the intersection of ZKML and AI infrastructure, focusi
 ---
 
 ## Notes
-Research notes and setup logs will be organized under `/notes`:  
-- `notes/halo2_intro.md` — Halo2 circuit learning notes  
-- `notes/ezkl_setup.md` — ezkl installation and test logs  
-- `notes/design-notes.md` — Initial design sketch for GPT verifier  
+Research notes and setup logs are organized under `/notes`:
+
+- [Halo2 Introduction](./notes/halo2_intro.md) — setup and test-circuit walkthrough  
+- [ezkl Setup](./notes/ezkl_setup.md) — installation and model proof logs  
+- [Design Notes](./notes/design-notes.md) — high-level architecture and roadmap  
 
 ---
 
