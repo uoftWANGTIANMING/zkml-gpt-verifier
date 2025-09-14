@@ -1,0 +1,40 @@
+day: 1
+title: "Halo2 Introduction & Test Circuit"
+date: 2025-09-14
+
+environment:
+  os: "Ubuntu 22.04 (WSL2)"
+  rust: "1.89.0"
+  cargo: "1.89.0"
+  dependencies:
+    - build-essential
+    - pkg-config
+    - cmake
+    - clang
+    - git
+    - curl
+    - libssl-dev
+
+setup:
+  steps:
+    - "git clone https://github.com/zcash/halo2.git"
+    - "cd halo2"
+    - "cargo test --release"
+
+results:
+  tests_run: 14
+  tests_passed: 8
+  tests_failed: 0
+  tests_ignored: 6
+  output_summary: "Halo2 environment successfully built and verified."
+
+observations:
+  - "Build and test completed smoothly under WSL2."
+  - "Core circuits in value.rs, plonk/circuit.rs executed successfully."
+  - "Ignored tests are expected and require larger configs."
+  - "Constraint system design appears modular with selectors and gates."
+
+next_steps:
+  - "Implement a minimal custom circuit (a + b = c)."
+  - "Use MockProver to validate constraints."
+  - "Document prover and verifier workflow with annotations."
