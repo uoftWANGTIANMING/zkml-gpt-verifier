@@ -1,0 +1,18 @@
+day: 2
+topic: "Halo2 Playground - Additive Constraint"
+setup:
+  - Used halo2_proofs dependency
+  - Built a minimal circuit enforcing a + b = c
+  - Added CLI input parsing for dynamic witness values
+tests:
+  - input: [2, 3, 5]
+    result: satisfied
+  - input: [2, 3, 6]
+    result: unsatisfied
+observations:
+  - Circuit enforces relation a + b = c using Halo2 constraints
+  - Private inputs (a, b) remain hidden; only public c is exposed
+  - Verification fails when constraint is not satisfied
+next_steps:
+  - Try multiplicative constraint (a * b = c)
+  - Explore combining multiple constraints into one circuit
