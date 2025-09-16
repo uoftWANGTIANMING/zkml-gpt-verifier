@@ -1,0 +1,17 @@
+day: 3
+topic: "CUDA + JAX + Triton Environment"
+setup:
+  - Verified GPU passthrough in WSL2 (nvidia-smi shows RTX 3070 Ti, CUDA 12.6)
+  - Created Python venv under ~ and installed:
+    - jax[cuda12_local]
+    - torch (cu126 wheels)
+    - triton
+tests:
+  - JAX: `print(jax.devices())` => GpuDevice(id=0)
+  - Triton: custom add kernel ran on CUDA; output = x + y
+observations:
+  - Avoid running Triton kernels from stdin; use .py file so jit can read source
+  - Keep venv and code under Linux home (not /mnt/c) for fewer permission issues
+next_steps:
+  - Day 4: run ezkl MNIST demo with GPU
+  - Optional: add a tiny benchmark to compare CPU vs GPU
